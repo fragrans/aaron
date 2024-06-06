@@ -29,6 +29,6 @@ jobs:
         env: # Or as an environment variable
           ftp_pass: ${{ secrets.FTP_PASSWORD }}
           ftp_user: ${{ secrets.FTP_USERNAME }}
-        run: echo "$ftp_pass, ftp_user"
+        run: echo "$ftp_pass, $ftp_user"
 
         
