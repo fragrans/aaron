@@ -38,7 +38,7 @@ jobs:
           server: spbot.xeltek.com.cn
           port: 10086
           username: ftp_spbot
-          server-dir: dists/superpro-sb09
+          server-dir: dists/superpro-sb09/
           local-dir: ./
           password: ${{ secrets.ftp_password }}
         
