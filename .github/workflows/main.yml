@@ -14,10 +14,9 @@ jobs:
 
       - name: list
         run: ls .
-        
+      - run: echo ${{ github.ref_name }}
       - name: Release
         uses: softprops/action-gh-release@v2
-        if: startsWith(github.ref, 'refs/tags/')
         with:
           files: README.md
 
