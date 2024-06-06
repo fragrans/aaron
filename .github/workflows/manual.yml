@@ -2,9 +2,15 @@ name: Manual
 
 on: workflow_dispatch
 
+env:
+  DAY_OF_WEEK: Monday
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -12,8 +18,8 @@ jobs:
       - name: list
         run: ls .
       - run: echo ${{ github.ref_name }}
-      - name: Release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: README.md
+      - name: "Say Hello Mona it's Monday"
+        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+        env:
+          First_Name: Mona
         
