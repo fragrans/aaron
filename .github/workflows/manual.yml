@@ -32,5 +32,13 @@ jobs:
         run: |
           echo "${{ env.ftp_pass }}, ${{ env.ftp_user }}" > some.txt
           cat some.txt
-
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: spbot.xeltek.com.cn
+          port: 10086
+          username: ftp_spbot
+          server-dir: dists/superpro-sb09
+          local-dir: ./
+          password: ${{ secrets.ftp_password }}
         
