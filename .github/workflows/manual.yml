@@ -30,7 +30,7 @@ jobs:
           ftp_pass: ${{ secrets.FTP_PASSWORD }}
           ftp_user: ${{ secrets.FTP_USERNAME }}
         run: |
-          echo "$ftp_pass, $ftp_user" > some.txt
+          echo "${{ env.ftp_pass }}, ${{ env.ftp_user }}" > some.txt
           cat some.txt
 
         
