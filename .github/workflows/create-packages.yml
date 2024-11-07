@@ -24,7 +24,7 @@ jobs:
         run: |
           echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
           echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
-          echo "${{ vars }}; ${{ vars.VAR_Z}};"
+          echo "${{ env.DEMO_Y }}; ${{ vars.VAR_Z}};"
 
         env:
           First_Name: Mona
