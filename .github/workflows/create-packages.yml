@@ -1,0 +1,28 @@
+name: Manual
+
+on: workflow_dispatch
+
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+  build:
+    runs-on: windows-latest
+    env:
+      Greeting: Hello
+      
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: list
+        run: ls .
+      - run: echo ${{ github.ref_name }}
+      - name: "Say Hello Mona it's Monday"
+        run: |
+          echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
+          echo "${{ env.Greeting }} ${{ env.First_Name }}. Today is ${{ env.DAY_OF_WEEK }}!"
+          echo "${{ env.DEMO_Y }} ${{ vars.VAR_Z}}"
+        env:
+          First_Name: Mona
+        
